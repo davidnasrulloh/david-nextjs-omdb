@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import InputSearch from "@/components/InputSearch";
@@ -68,12 +66,10 @@ export default function HomeView() {
 
     const {
         data: dataSeries,
-        error: errorSeries,
         fetchNextPage: fetchNextPageSeries,
         hasNextPage: hasNextPageSeries,
         isFetching: isFetchingSeries,
         isFetchingNextPage: isFetchingNextPageSeries,
-        status: statusSeries,
     } = useInfiniteQuery({
         queryKey: ["getSeries", searchQuery],
         queryFn: ({ pageParam = 1 }) =>
@@ -93,9 +89,7 @@ export default function HomeView() {
     const dataMoviesAllItems = data?.pages.flatMap((page) => page.Search) || [];
     const dataSeriesAllItems =
         dataSeries?.pages.flatMap((page) => page.Search) || [];
-
-    const isLoadingPage = isFetching || isFetchingNextPage;
-
+    const isLoadingPage = isFetching || isFetchingNextPage || isFetchingSeries;
     const dataMoviesAvailable = dataMoviesAllItems?.every(
         (item) => item !== undefined
     );
@@ -105,20 +99,24 @@ export default function HomeView() {
 
     return (
         <section className="mt-12 flex flex-col gap-4 w-full">
+            {/* Input search */}
             <InputSearch
                 tempSearchQuery={tempSearchQuery}
                 handleChange={handleChange}
                 handleSearch={handleSearch}
             />
 
+            {/* If data unavaileble */}
             {(!dataMoviesAvailable || !dataSeriesAvailable) && (
                 <p className="text-center my-24 text-xl font-semibold">
                     Data film belum ditemukan, cari dengan keyword yang benar!
                 </p>
             )}
 
+            {/* Loading spinner */}
             {isLoadingPage && <LoadingScreen />}
 
+            {/* Data Render */}
             {!isLoadingPage && (
                 <>
                     <MovieTypeView
