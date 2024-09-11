@@ -30,12 +30,12 @@ function DetailMovies() {
                     >
                         Kembali
                     </button>
-                    <div className="p-8 flex flex-row justify-between items-center rounded-lg bg-purple-200 mb-4">
+                    <div className="p-8 flex flex-row justify-between md:gap-0 items-center rounded-lg bg-purple-200 mb-4">
                         <div className="flex flex-col gap-3">
-                            <h3 className="text-4xl font-semibold">
+                            <h3 className="text-2xl md:text-4xl font-semibold">
                                 {data?.Title}
                             </h3>
-                            <div className="flex flex-row gap-8 text-xl font-medium">
+                            <div className="flex flex-row gap-3 md:gap-8 text-xl font-medium">
                                 <p>{data?.Year}</p>
                                 <p>{data?.Rated}</p>
                                 <p>{data?.Runtime}</p>
@@ -44,7 +44,7 @@ function DetailMovies() {
                         <div className="flex flex-col">
                             <p>IMDB Rating</p>
                             <p>
-                                <span className="font-semibold text-4xl">
+                                <span className="font-semibold text-2xl md:text-4xl">
                                     {data?.imdbRating}
                                 </span>{" "}
                                 / 10
