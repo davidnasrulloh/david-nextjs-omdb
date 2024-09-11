@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import localFont from "next/font/local";
 import ProviderQueryClient from "@/hooks/ProviderQueryClient";
+// import localFont from "next/font/local";
 
-const geistSans = localFont({
-    src: "./fonts/GeistVF.woff",
-    variable: "--font-geist-sans",
-    weight: "100 900",
-});
-const geistMono = localFont({
-    src: "./fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-});
+// const aceSans = localFont({
+//     src: "./fonts/AceSans.woff",
+//     variable: "--font-geist-sans",
+//     weight: "100 900",
+// });
+// const geistSans = localFont({
+//     src: "./fonts/GeistVF.woff",
+//     variable: "--font-geist-sans",
+//     weight: "100 900",
+// });
+// const geistMono = localFont({
+//     src: "./fonts/GeistMonoVF.woff",
+//     variable: "--font-geist-mono",
+//     weight: "100 900",
+// });
 
 export const metadata: Metadata = {
     title: "Olympic - David",
@@ -26,9 +31,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body className="font-aceSans">
                 <ProviderQueryClient>{children}</ProviderQueryClient>
             </body>
         </html>

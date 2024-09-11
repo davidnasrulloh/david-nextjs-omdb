@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Setting font base web */
+@layer base {
+    @font-face {
+        font-family: "AceSans";
+        src: url("./fonts/AceSans.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
