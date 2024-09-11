@@ -68,7 +68,7 @@ export default function HomeView() {
         data: dataSeries,
         fetchNextPage: fetchNextPageSeries,
         hasNextPage: hasNextPageSeries,
-        isFetching: isFetchingSeries,
+        // isFetching: isFetchingSeries,
         isFetchingNextPage: isFetchingNextPageSeries,
     } = useInfiniteQuery({
         queryKey: ["getSeries", searchQuery],
@@ -89,7 +89,7 @@ export default function HomeView() {
     const dataMoviesAllItems = data?.pages.flatMap((page) => page.Search) || [];
     const dataSeriesAllItems =
         dataSeries?.pages.flatMap((page) => page.Search) || [];
-    const isLoadingPage = isFetching || isFetchingNextPage || isFetchingSeries;
+    const isLoadingPage = isFetching || isFetchingNextPage;
     const dataMoviesAvailable = dataMoviesAllItems?.every(
         (item) => item !== undefined
     );
