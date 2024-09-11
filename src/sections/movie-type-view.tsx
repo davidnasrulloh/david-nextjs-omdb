@@ -11,10 +11,11 @@ import { Grid, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { IMovieItem } from "@/types/movie";
 
 type Props = {
-    dataMoviesAvailable: any;
-    dataMoviesAllItems: any;
+    dataMoviesAvailable: boolean;
+    dataMoviesAllItems: IMovieItem[];
     sliderRef: any;
 };
 

@@ -1,7 +1,8 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import { IMovieItem } from "@/types/movie";
 
-type Props = { dataSeriesAvailable: any; dataSeriesAllItems: any };
+type Props = { dataSeriesAvailable: boolean; dataSeriesAllItems: IMovieItem[] };
 
 const SeriesTypeView = ({ dataSeriesAvailable, dataSeriesAllItems }: Props) => {
     return (

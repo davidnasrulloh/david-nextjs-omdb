@@ -3,6 +3,7 @@
 
 import LoadingScreen from "@/components/LoadingScreen";
 import { getDetailsMovies } from "@/service/moviesApi";
+import { IDetailsMovie } from "@/types/movie";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
@@ -12,7 +13,7 @@ function DetailMovies() {
     const { id } = useParams();
     const router = useRouter();
 
-    const { status, fetchStatus, data, isLoading } = useQuery({
+    const { data, isLoading } = useQuery<IDetailsMovie>({
         queryKey: ["projects", id],
         queryFn: () => getDetailsMovies({ id: String(id) }),
         enabled: !!id,
@@ -34,7 +35,7 @@ function DetailMovies() {
                             <h3 className="text-4xl font-semibold">
                                 {data?.Title}
                             </h3>
-                            <div className="flex flex-row gap-3 font-medium">
+                            <div className="flex flex-row gap-8 text-xl font-medium">
                                 <p>{data?.Year}</p>
                                 <p>{data?.Rated}</p>
                                 <p>{data?.Runtime}</p>
