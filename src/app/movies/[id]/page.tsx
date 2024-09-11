@@ -51,7 +51,7 @@ function DetailMovies() {
                         </div>
                     </div>
 
-                    <div className="flex flex-col md:flex-row justify-center gap-3">
+                    <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-3">
                         <div className="w-[60%]">
                             <Image
                                 width={0}
@@ -70,7 +70,7 @@ function DetailMovies() {
                                 }}
                             />
                         </div>
-                        <div className="flex flex-col gap-1 bg-purple-100 rounded-xl">
+                        <div className="flex flex-col gap-1 bg-purple-50 rounded-xl">
                             <h5 className="p-8 text-xl bg-green-300 mx-4 mt-4 rounded-lg">
                                 {data?.Plot}
                             </h5>
