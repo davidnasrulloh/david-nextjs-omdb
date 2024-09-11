@@ -98,7 +98,7 @@ export default function HomeView() {
     );
 
     return (
-        <section className="mt-12 flex flex-col gap-4 w-full">
+        <section className="mt-12 flex flex-col gap-4 w-full mb-24">
             {/* Input search */}
             <InputSearch
                 tempSearchQuery={tempSearchQuery}
