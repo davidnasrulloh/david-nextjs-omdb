@@ -30,7 +30,7 @@ function DetailMovies() {
                     >
                         Kembali
                     </button>
-                    <div className="p-8 flex flex-row justify-between md:gap-0 items-center rounded-lg bg-purple-200 mb-4">
+                    <div className="p-8 flex flex-row justify-between gap-2 items-center rounded-lg bg-purple-200 mb-4">
                         <div className="flex flex-col gap-3">
                             <h3 className="text-2xl md:text-4xl font-semibold">
                                 {data?.Title}

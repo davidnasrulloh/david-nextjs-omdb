@@ -13,7 +13,7 @@ const SeriesTypeView = ({ dataSeriesAvailable, dataSeriesAllItems }: Props) => {
                         key={item?.imdbID}
                         className="flex flex-row sm:flex-col hover:scale-105 transition-all gap-4 justify-start bg-white rounded-lg shadow-lg hover:shadow-xl duration-300 p-4"
                     >
-                        <div className="overflow-hidden rounded-lg w-[12rem] sm:w-auto sm:h-[32rem]">
+                        <div className="overflow-hidden rounded-lg min-w-40 max-w-40 sm:min-w-0 sm:max-w-[100rem] sm:w-full h-auto">
                             <Image
                                 width={0}
                                 height={0}
@@ -24,7 +24,7 @@ const SeriesTypeView = ({ dataSeriesAvailable, dataSeriesAllItems }: Props) => {
                                 }
                                 alt={`Image ${item?.Title}`}
                                 sizes="100vw"
-                                className="object-cover"
+                                className="object-cover w-full h-full"
                                 style={{
                                     width: "100%",
                                     height: "100%",
