@@ -3,7 +3,7 @@
 import InputSearch from "@/components/InputSearch";
 import { getSearchMovies } from "@/service/moviesApi";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import React, { useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import MovieTypeView from "./movie-type-view";
 import SeriesTypeView from "./series-type-view";
@@ -14,7 +14,7 @@ export default function HomeView() {
     const [tempSearchQuery, setTempSearchQuery] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setTempSearchQuery(e.target.value);
     };
 
