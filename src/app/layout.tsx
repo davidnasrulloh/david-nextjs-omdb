@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ProviderQueryClient from "@/hooks/ProviderQueryClient";
+import ProviderQueryClient from "@/providers/ProviderQueryClient";
 
 export const metadata: Metadata = {
     title: "Olympic - David",
